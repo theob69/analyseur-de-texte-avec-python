@@ -1,0 +1,233 @@
+MTRX Présentation
+-18 niveau d’alignement
+Supra convertisseur audionumérique,matrix de routage (matrix de 1500 entrée
+max et 1500 sortie
+Latence de 3 samples
+Contrôleur de monitoring complétement programmable
+Sommateur numérique
+169.254 adresse ip problème
+Shame adresse ip auto assignée
+Protools sort en digilink
+Protools recolle nos enregistrement
+Dadman logiciel qui permet de se connecter en réseau
+AD = Digitale Analogue
+Klang Kelle nom de l’appareille Dante
+On peut avoir une ref vidéo sur le dadmn
+Madi et Dante peuvent servir à transporter le ref
+Faut éteindre les enceinte quand on change le sampling pour éviter un “clack”
+Si on met le word clock en 176,4 ou 192 ,il ressortira en word clock base
+High Z haute impédance se mets automatiquement si il y a un bouchon sur le
+cable bnc
+– Laisser le paramètre follow dans Dante,Sample rate
+– 250ms pour la latence
+Preferred master : Yes
+Si je branche une autre interface ,je dois quitter protools pour que la
+modification a lieu
+Si on change de playback engine,il nous ferme la session et la relance à cause
+du mapping output
+Port 1 et 2 emu:MTRX 32x32
+18dbu niveau max en tv en cinéma +4dbu niveau alignement -20dbfs donc 24
+
+dbfs
+24dbu max -20dbfs minimale
+4 premier anneaux sont pris par les aventon les autres pour le caisson
+Dans Audi B ça alimente les aventon,les questid,les deux caisson et l’autre chai
+plus
+Micro envoie dans Dante input AD vers Digilink
+Dans damant preferance toujours mettre don’t save file
+Dans DADman - Setting,monitor profile dans device list
+Séléctionner l’unité qu’on veut programmer dans monitor profil configuration
+Saveguarder le fichier dms, save profil as et ouvrir open profil
+Clic droit dans le blanc pour ajouter un monitor
+Pour ajouter une enceinte click droit sur output mettre add new set
+Faut les renommer
+Ensuite click droit ,groupe format pour choisir les formats
+Créer une section monitoring avec les sorties nommé les types d’enceinte et
+les formater , les sources, les fold down
+Left to right side :AESEBU ,low fréquemment effect ,DA
+Faut mettre le contrôleroom eucon en master
+Automation orientée objet : c’est le clip gain
+Le clip gain est en 32flot
+La résolution du sommateur est toujours la résolution max des bits
+La résolution maximal c’est l’amitié des flot
+Sur un recorder on fait une session de 24bit,car tout les
+interfaces,convertisseur sont en 24bit
+C’est mieux 24bits (ou 48) car c’est suffisant car ça permet au passage de
+chasser le bruit et amélioré le rapport signal/bruit
+Le 32flot garde le niveau de précision du moteur audio
+-700 +700
+Le 32flot c’est du 24bit
+
+32flot - précision de calcul
+DXD: modèle à 1bit (0 où 1)
+On peut pas saturé en 32flot appliqué à la prise de son
+LNE :None Linear Editor
+X86= 32bits
+Il ya pas d’historique sur protools, enfaite si mais il faut tous les apprendre
+Mauvaise gestion de delay de compensation, le son sera différent du bounce
+offline
+Ce n’est pas l’ingé son qui décide au montage
+Il faut du timecode sinon la synchro sera mauvaise
+Sinon (si on a pas de timecode) il y a la synchro waveform et le clap (très
+important)
+Htz : unité du sondons la fréquence d’échantillonnage
+On va regarder le support
+Les unités de vitesse en analogique, on se base sur le support (mètre,
+secondes m/s,…
+Le son ne tourne pas en image par seconde
+Norme readbook,méta data pour les cd en musique
+Prise cerclé : en gros c’est une bonne prise qu’on entoure et qu’on l’utilisera
+pour le montage, la réal décide de prendre la prise cerclé
+Wild Track : son seul
+Il faut utiliser le varispeed que le time stretch pour changer la vitesse et faire le
+pitch pour modifier le ton.
+Pitch d’harmonisation : pour retrouver la hauteur tonal donc pitch + varispeed
+Avec les rush wild on peut directement filtrer
+Wild : ambiance effets
+NLE :Non Linear Editor
+EDL: Edit decision List : liste des plan vidéo ou audio qu’on a pris et qu’on le
+mets dans la liste
+
+On ne bosse ps avec du mp4 et du H264 I frames
+Sur protools Matching field recorder channel : info de la piste
+Software pour vérifier synchro vidéo et audio:
+Shutter Encoder,Media info,VLC
+Glisser la vidéo dans media info = info de la vidéo
+Vérifier la vidéo resolution, le frame rate
+Twistedwaves :utilitaire permettant le transfère des vitesse avec les
+algorithmes
+MXF (OP-1a) === MOV
+Différences de l’aaf mbded : il y a pas de meta data , dans l’aaa référence oui
+Dans shutter encoder il faut cliquer sur generate in OP-Atom,pour changer on
+clique sur op atom pour avoir OP1A
+Dans auto backup, cochez enable session backup pour sauvegarde
+automatique
+Dans protools régler le timecode et verifier la grid en début de session
+Option clique droit : supprimer le bar beat
+FFOA :First frame of action (début du film) =PI : première image
+LFOA : last …
+FFOA on le cale à 10h dans le broadcast
+On le cale à 01h pour le film
+Plus le film est long plus on allonge la bobine
+Mettre un marqueur start 10sec avant dans la timeline
+2-pop placer 2sec avant la FFOA
+Mettre la FFOA à 1H
+Video import option : mettre main video track
+Click droit sur la piste et field recorder guide track
+Field recorder channels match criteria mettre “any”
+
+Le timecode on enregistre en rec roll
+Les piste micro qui sont pareille sont des mix down
+Sur un AAF on peut avoir un clip audio et vidéo
+DL audio : optionel
+DL vidéo : pas optionel
+edit load ne sait pas faire la confo initiale ,matchbox oui
+protools peut merder si il y a de la vidéo dedans
+on a AAF audio propre et un AAF vidéo , et on peut l’importer pour faire un
+picture cut track
+Quand un fichier manque il faut faire Manually find & relink
+file ID : l’identifiant du fichier dans les media de l’AAF
+dans find link il faut mettre find by name quand on a trouver faut fair un commit
+link
+shift,cmd,f recherche clip
+shift,cmd,d annnuler
+channel name and scene and take deux meta data principaux
+clic droit,reveal workspace dans clip list pour voir les méta data
+un fichier orange c’est un fichier qui est déjà dans la session contrrairement au
+blanc dans matching files…
+tourner en 32bit flot en tournage pour eviter les saturation pour les prises de
+vue dialogué
+ctrl + shift +) gère l’automation dans le clip gain
+il faut faire des cicuit direct-retour
+les alignements de phase : perche HF
+Auto align post plug in sert a realigner les courbes des pistes pour qu’il soit en
+phase
+on ne peut pas utiliser le mixdown des hf et certains hf ont une inversion de
+polarité
+DCI : Digital Cinema Initiative
+Fichier DCI : fichier PI DI
+
+dans I/O setup output meter pass faut le mettre dans le bus audition
+déselectionner la piste vidéo dans import session data
+batch rename : clique droit sur piste séléctionner ou dans la clip list
+pFX: effets sonore produit au tournage
+Futzing : dialogue avec des effets dessus
+faut bloquer les pistes vidéos
+2 règles: color codé le lieux et une même couleur doit être sur le même axe
+Twisted waves ,change pitch and speed,best (slower),lambda standard
+
+Consolidate clip + contrôle : il y a le bip dedans
+
+mettre un 100hz sur le LFE pour le bip et 1000hz pour les autres
+clique droit sur une piste,on retrouve les track preset (options) ou new
+workspace ou opt + P pour track preset
+workspace pour les track preset
+On peut envoyer que des pistes mono ou stereo,il peut envoyer que des LCR en
+mono/stereo sur protools
+New path :
+crée path ; Boom (LCR),Lav (LCR),ADR (LCR),NARRation (5.1),DX Futz (5.1) voix
+de robot…,Move (LCR),Step(LCR),Prop (LCR) (accessoire),(pour dialogue) t,
+(musique) Score (5.1),Source (5.1),MX FUTZ (5.1)(ambiance)BG A,BG B,BG
+C,BG D
+pistes ad,option pour localiser des langues et qu’on doit mettre dans les BG
+lock
+En cas de correction de problème , il faut trouver l’origine du problème:
+Prise de son problématique ou cohérance dans le mixage (problème par
+rapport à d’autres sons)
+Cas 2: Considérations narratives et esthétiques
+– Relief dans la bande son
+– Orienter le focus (donc la narration)
+
+– Diégétisation
+– Transformation (effet pur)
+– Eléments non prévus pour fonctionner ensemble
+La question du Quand/Où ? (Dans la chaine de traitement…)
+– Prise de son
+– Source avant mélange
+– Après mélange
+– Notion defamilles de sons
+– Conséquences aux différentes étapes
+Application du traitement:
+- Process (destructif)
+-Temps réel
+– Etage de traitement
+Première question (il faut traiter ?)
+1er traitement le plus simple est le niveau
+sur logic et reaper on peut passer à 64 pour cents sur les sommation mais pas
+sur Protools
+L’importance des outils de mesure :
+Changements de niveau d’écoute
+Réponse dusystème
+si on travaille trop fort = fatigue auditive naturelle
+Il faut avoir tout les fichiers sons à 20htz à 20K pour éviter les problèmes
+techniques
+On va avoir de EQ dans plusieurs pistes EQ (fréquence,facteur de qualité,gain)
+Il faut toujours obtenir un maximum d’efficacité acoustique avec un
+minimum d’énergie électrique.
+– Nettoyage des extrêmes
+– Nettoyage des nuisances
+– Equilibre global (selon la source)
+Certains sont multitâches,d’autres moins…
+Filtrage extrême (coupe haut et bas)
+Correction fréquentielle (souvent en soustractif)
+Coloration (souvent en additif)
+Ajout de fréquences harmoniques
+
+au USA ils utilisent la fréquence médium
+C’est souvent en enlevent ce qui révèle ce qu’on voulait
+faut travailler l’EQ en soustractif
+3e Cas : en opposition de phase,on obtient une annulation presque totale “un
+nullle test”
+Linéarité de Phase c’est quand les fréquence ne peuvent pas sortir en même
+temps.
+Side Chain : déclanche le signal du traitement
+Supresser est un très bon De Esser
+FFT : First Fourier Transportation
+l’atmos est basé sur le surround (immersif) pas la stéréo
+Stéréo Tool v3
+on a 1 corrélateur de phase quand on est en stéréo
+absolute pan linking dans setup, préférence
+
+CargoCult Spanner
+
+
